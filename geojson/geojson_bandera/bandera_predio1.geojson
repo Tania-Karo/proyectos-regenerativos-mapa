@@ -1,0 +1,38 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -62.37312032,
+              -28.74541814
+            ],
+            [
+              -62.42272528,
+              -28.7076509
+            ],
+            [
+              -62.37270923,
+              -28.70770421
+            ],
+            [
+              -62.37312032,
+              -28.74541814
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "La Nueva Aurora",
+        "companyName": "SMR S.A.",
+        "region": "Bandera (Argentina)",
+        "marker_lat": -28.726561,
+        "marker_lon": -62.385401
+      }
+    }
+  ]
+}
