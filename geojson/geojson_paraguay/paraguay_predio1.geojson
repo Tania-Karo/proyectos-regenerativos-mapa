@@ -3,12 +3,6 @@
   "features": [
     {
       "type": "Feature",
-      "properties": {
-        "id": 22,
-        "period": null,
-        "name": "Palmeiras S.A.",
-        "product": "Ganado"
-      },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -83,6 +77,13 @@
             ]
           ]
         ]
+      },
+      "properties": {
+        "name": "Predio sin nombre",
+        "companyName": "Palmeiras S.A.",
+        "region": "Paraguay (Paraguay)",
+        "marker_lat": -21.533132,
+        "marker_lon": -60.702245
       }
     }
   ]
