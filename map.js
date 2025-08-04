@@ -8,6 +8,13 @@ L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}{r}
 	ext: 'jpg'
 }).addTo(map);
 
+const sidebar = L.control.sidebar({
+  autopan: true,
+  container: 'sidebar',
+  position: 'left'
+}).addTo(map);
+
+
 var cowIcon = L.icon({
     iconUrl: 'icons/cow2.svg',
     iconSize: [40, 40],
@@ -42,14 +49,17 @@ fetch('geojson_files.json')
               let icon = ((total % 2) === 0) ? cowIcon : soybeanIcon;
               total++;
 
-              let popupContent = `
-                <b>${props.name || "Predio"}</b><br>
-                ${props.companyName || ""}<br>
-                <i>${props.region || ""}</i>
-              `;
-
+              // Crear el marcador
               L.marker([lat, lon], { icon: icon })
-                .bindPopup(popupContent)
+                .on('click', () => {
+                  const html = `
+                    <h3>${props.name || "Predio"}</h3>
+                    <p><strong>Empresa:</strong> ${props.companyName || "N/A"}</p>
+                    <p><strong>Región:</strong> ${props.region || "N/A"}</p>
+                  `;
+                  document.getElementById('sidebar-content').innerHTML = html;
+                  sidebar.open('info');
+                })
                 .addTo(map);
             }
           });

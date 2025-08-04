@@ -2,6 +2,28 @@
 
 Todos los cambios notables a este proyecto se documentarán en este archivo.
 
+## [v0.2.0] - 2025-08-04
+### Agregado
+- 
+
+### Cambiado
+- 
+
+### Corregido
+- 
+
+
+## [Unreleased]
+### Agregado
+- 
+
+### Cambiado
+- 
+
+### Corregido
+- 
+
+
 ## [Unreleased]
 ### Agregado
 - Carga automática de todos los GeoJSONs desde carpeta 'geojson/'
