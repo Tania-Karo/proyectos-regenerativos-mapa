@@ -1,42 +1,6 @@
 {
   "type": "FeatureCollection",
   "features": [
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -61.88870292,
-              -26.7262288
-            ],
-            [
-              -61.86352407,
-              -26.72662812
-            ],
-            [
-              -61.86359777,
-              -26.75333142
-            ],
-            [
-              -61.88853239,
-              -26.75333796
-            ],
-            [
-              -61.88870292,
-              -26.7262288
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "name": "Predio sin nombre",
-        "companyName": "Gatto Hermanos S.R.L.",
-        "region": "Sachayoj-Charata (Argentina)",
-        "marker_lat": -26.73998,
-        "marker_lon": -61.876089
-      }
-    }
+    
   ]
 }
