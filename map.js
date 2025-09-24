@@ -32,22 +32,30 @@ fetch('geojson_files.json')
   .then(response => response.json())
   .then(files => {
     let total = 0;
-    files.forEach((file, i) => {
+
+    files.forEach((file) => {
       fetch(file)
         .then(resp => resp.json())
         .then(data => {
-          L.geoJSON(data).addTo(map); // Cargar capa completa
+          console.log("Cargando archivo:", file, data);
 
-          data.features.forEach((feature, j) => {
+          // Agregar polígonos y líneas (pero NO markers default)
+          L.geoJSON(data, {
+            pointToLayer: () => null
+          }).addTo(map);
+
+          // Manejar los puntos con íconos personalizados
+          data.features.forEach((feature) => {
             let props = feature.properties;
             let lat = props.marker_lat;
             let lon = props.marker_lon;
+
+            console.log("Feature:", props.name, lat, lon, feature.geometry);
 
             if (lat && lon) {
               let icon = ((total % 2) === 0) ? cowIcon : soybeanIcon;
               total++;
 
-              // Crear el marcador
               L.marker([lat, lon], { icon: icon })
                 .on('click', () => {
                   const html = `
@@ -61,6 +69,8 @@ fetch('geojson_files.json')
                 .addTo(map);
             }
           });
-        });
+        })
+        .catch(err => console.error("Error cargando archivo:", file, err));
     });
-  });
+  })
+  .catch(err => console.error("Error leyendo geojson_files.json", err));
