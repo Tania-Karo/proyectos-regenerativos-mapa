@@ -67,6 +67,17 @@ html, body {
     color: #fff !important;
 }
 
+/* Forzar blanco en todos los íconos inactivos y activos */
+.leaflet-sidebar-tabs li a,
+.leaflet-sidebar-tabs li a i {
+    color: #fff !important;
+}
+
+.leaflet-sidebar-tabs li a:hover i {
+    color: #AF7502 !important; /* ejemplo: amarillo en hover */
+}
+
+
 
 /* Ajuste móvil opcional */
 @media (max-width: 768px) {
