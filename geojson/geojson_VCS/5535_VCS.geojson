@@ -1,0 +1,50 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -64.7565396333258,
+              -34.9218652583319
+            ],
+            [
+              -64.7555829269508,
+              -34.8312027328648
+            ],
+            [
+              -64.920814513666,
+              -34.8319467095584
+            ],
+            [
+              -64.9198632014963,
+              -34.9228748185481
+            ],
+            [
+              -64.7565396333258,
+              -34.9218652583319
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": 5535,
+        "name": "GRANJA RALICÓ: UN MODELO DE PASTOREO REGENERATIVO",
+        "companyName": "Berca SACIR y F.",
+        "region": "Códoba ",
+        "hectares": 10600,
+        "status":"En desarrollo",
+        "marker_lat": -34.8770,
+        "marker_lon": -64.8382,
+        "source": "https://registry.verra.org/app/projectDetail/VCS/5535",
+        "Name": "Perimetro Estancia Ralico",
+        "Description": "",
+        "project_id": "5535",
+        "layer_name": "Perimetro_Estancia_Ralico"
+      }
+    }
+  ]
+}

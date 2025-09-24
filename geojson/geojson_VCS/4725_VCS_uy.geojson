@@ -1,0 +1,30 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -55.26700555555556,
+          -34.736525
+        ]
+      },
+      "properties": {
+        "id": 4725,
+        "name": "Ganadería 2040/ Uruguay",
+        "companyName": "Profesionales SRL",
+        "region": "Uruguay",
+        "hectares": 221,
+        "status":"En desarrollo",
+        "marker_lat": -34.736525,
+        "marker_lon": -55.26700555555556,
+        "source": "https://registry.verra.org/app/projectDetail/VCS/4725",
+        "Name": "Marca de posición sin título",
+        "Description": "",
+        "project_id": "4725",
+        "layer_name": "Pozos Azules.kml"
+      }
+    }
+  ]
+}

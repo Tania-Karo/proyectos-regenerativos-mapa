@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-50.472696, -13.401365]
+      },
+      "properties": {
+        "id": 5347,
+        "name": "Programa Carbono ALM NaturAll: Agricultura Regenerativa AMAGGI en Brasil",
+        "companyName": "NaturAll Carbon Limited",
+        "region": "Brasil",
+        "hectares": 50000,
+        "status":"Bajo validación ",
+        "marker_lat": -13.401365,
+        "marker_lon": -50.472696,
+        "source": "https://registry.verra.org/app/projectDetail/VCS/5347"
+      }
+    }
+  ]
+}

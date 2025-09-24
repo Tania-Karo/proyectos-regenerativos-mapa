@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-48.948358, -14.346641]
+      },
+      "properties": {
+        "id": 5043,
+        "name": "AGRICULTURA REGENERATIVA BRASILEÑA PARA EL BÉLGICA DE CARBONO DEL CERRADO (BRA-3C)",
+        "companyName": "MiCarbon3",
+        "region": "Goiás",
+        "hectares": 500000,
+        "status":"Bajo validación",
+        "marker_lat": -14.346641,
+        "marker_lon": -48.948358,
+        "source": "https://registry.verra.org/app/projectDetail/VCS/5043"
+      }
+    }
+  ]
+}

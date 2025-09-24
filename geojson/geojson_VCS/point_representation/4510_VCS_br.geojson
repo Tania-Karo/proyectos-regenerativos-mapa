@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-52.154792, -18.154975]
+      },
+      "properties": {
+        "id": 4510,
+        "name": "SECUESTRO DE CARBONO DEL SUELO MEDIANTE LA ADOPCIÓN Y MANTENIMIENTO DE PRÁCTICAS DE AGRICULTURA CLIMÁTICAMENTE INTELIGENTE EN DIFERENTES USOS DE CULTIVOS Y RECUPERACIÓN DE PASTOS DEGRADADOS.",
+        "companyName": "Agrorobotica - Fotónica en Certificación Agroambiental SA",
+        "region": "Goiás",
+        "hectares": 4714,
+        "status":"Rechazado por el administrador",
+        "marker_lat": -18.154975,
+        "marker_lon": -52.154792,
+        "source": "https://registry.verra.org/app/projectDetail/VCS/4510"
+      }
+    }
+  ]
+}

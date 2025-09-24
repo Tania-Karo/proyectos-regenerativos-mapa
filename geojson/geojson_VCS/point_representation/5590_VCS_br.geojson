@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-49.694038, -10.878863]
+      },
+      "properties": {
+        "id": 5590,
+        "name": "PROGRAMA CARBONO NATURALL: AGRICULTURA REGENERATIVA EN BRASIL – PROYECTO IV",
+        "companyName": "NaturAll Carbon Limited",
+        "region": "Brasil",
+        "hectares": 398593637,
+        "status":"En desarrollo",
+        "marker_lat": -10.878863,
+        "marker_lon": -49.694038,
+        "source": "https://registry.verra.org/app/projectDetail/VCS/5590"
+      }
+    }
+  ]
+}

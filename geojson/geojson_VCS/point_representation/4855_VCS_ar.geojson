@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-62.565533, -35.817998]
+      },
+      "properties": {
+        "id": 4855,
+        "name": "Mejora de la gestión de las tierras agrícolas en Argentina",
+        "companyName": "Vista Energía Argentina SAU",
+        "region": "Provincia de Buenos Aires (Argentina)",
+        "hectares": 2597,
+        "status":"Se solicita registro",
+        "marker_lat": -35.817998,
+        "marker_lon": -62.565533,
+        "source": "https://registry.verra.org/app/projectDetail/VCS/4855"
+      }
+    }
+  ]
+}

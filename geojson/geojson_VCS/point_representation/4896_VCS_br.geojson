@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-55.720193, -12.536061]
+      },
+      "properties": {
+        "id": 4896,
+        "name": "Programa de Carbono para la Agricultura de Precisión de Brasil",
+        "companyName": "Enviro Carbon Serviços Ambientais Ltda",
+        "region": "Mato Grosso, Brasil",
+        "hectares": 15000000,
+        "status":"Bajo Validación ",
+        "marker_lat": -12.536061,
+        "marker_lon": -55.720193,
+        "source": "https://registry.verra.org/app/projectDetail/VCS/4896"
+      }
+    }
+  ]
+}

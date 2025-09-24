@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-63.61933915095006, -38.41591217556869]
+      },
+      "properties": {
+        "id": 3993,
+        "name": "PROGRAMA DEL GRUPO CARBONO PARA EL MANEJO SOSTENIBLE DE CULTIVOS Y PASTOS BAJOS EN CARBONO EN ARGENTINA",
+        "companyName": "Soluciones Agroclimáticas Carbon Group LLC",
+        "region": "La Pampa, Argentina",
+        "hectares": 160000,
+        "status":"Rechazado por el administrador",
+        "marker_lat": -38.41591217556869,
+        "marker_lon": -63.61933915095006,
+        "source": "https://registry.verra.org/app/projectDetail/VCS/3993"
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-52.994880, -12.450945]
+      },
+      "properties": {
+        "id": 5299,
+        "name": "Programa Agoro Carbon Brasil",
+        "companyName": "Agoro Carbon Alliance Brasil",
+        "region": "Brasil",
+        "hectares": 12000,
+        "status":"En desarrollo",
+        "marker_lat": -12.450945,
+        "marker_lon": -52.994880,
+        "source": "https://registry.verra.org/app/projectDetail/VCS/5299"
+      }
+    }
+  ]
+}

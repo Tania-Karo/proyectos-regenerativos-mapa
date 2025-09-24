@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-58.3, -28.5]
+      },
+      "properties": {
+        "id": 3938,
+        "name": "Carbono Rural AR NEA",
+        "companyName": "Grupo Ecosecurities Limitado",
+        "region": "Corrientes, Argentina",
+        "hectares": 100000,
+        "status":"Se solicita registro",
+        "marker_lat": -28.5,
+        "marker_lon": -58.3,
+        "source": "https://registry.verra.org/app/projectDetail/VCS/3938"
+      }
+    }
+  ]
+}

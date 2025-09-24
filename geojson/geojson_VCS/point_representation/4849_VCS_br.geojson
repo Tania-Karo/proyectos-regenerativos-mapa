@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-46.680309, -23.587926]
+      },
+      "properties": {
+        "id": 4849,
+        "name": "Renove ALM Brasil",
+        "companyName": "Multiples proponentes",
+        "region": "São Paulo",
+        "hectares": 150000,
+        "status":"Bajo validación",
+        "marker_lat": -23.587926,
+        "marker_lon": -46.680309,
+        "source": "https://registry.verra.org/app/projectDetail/VCS/4849"
+      }
+    }
+  ]
+}

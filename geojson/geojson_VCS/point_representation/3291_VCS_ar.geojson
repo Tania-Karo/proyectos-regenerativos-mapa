@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-58.993843, -34.866343]
+      },
+      "properties": {
+        "id": 3291,
+        "name": "Restauración de pastizales de Boomitra en los pastizales templados de América del Sur mediante el enriquecimiento del suelo",
+        "companyName": "Boomitra Inc",
+        "region": "Las Pampas: Argentina, Brasil, Paraguay y Uruguay",
+        "hectares": 485600,
+        "status":"Registrado",
+        "marker_lat": -34.866343,
+        "marker_lon": -58.993843,
+        "source": "https://registry.verra.org/app/projectDetail/VCS/3291"
+      }
+    }
+  ]
+}

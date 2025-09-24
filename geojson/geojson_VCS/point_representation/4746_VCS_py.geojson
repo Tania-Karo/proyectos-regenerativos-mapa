@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-61.983333, -21.966666]
+      },
+      "properties": {
+        "id": 4746,
+        "name": "Agricultura Regenerativa Sudamericana mediante Pastoreo Regenerativo (SARA) - AgriCarbon",
+        "companyName": "Grupo Ecosecurities Limitado",
+        "region": "Chaco (Paraguay)",
+        "hectares": 250000,
+        "status":"Bajo validación",
+        "marker_lat": -21.966666,
+        "marker_lon": -61.983333,
+        "source": "https://registry.verra.org/app/projectDetail/VCS/4746"
+      }
+    }
+  ]
+}

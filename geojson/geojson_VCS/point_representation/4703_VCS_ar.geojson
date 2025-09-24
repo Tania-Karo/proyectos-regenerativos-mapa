@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-63.134825, -35.680561]
+      },
+      "properties": {
+        "id": 4703,
+        "name": "Programa Grupo Carbono para el manejo sustentable de cultivos y pastizales con bajas emisiones de carbono en Argentina II",
+        "companyName": "Soluciones Agroclimáticas Carbon Group LLC",
+        "region": "Argentina",
+        "hectares": 160000,
+        "status":"Bajo validacion",
+        "marker_lat": -35.680561,
+        "marker_lon": -63.134825,
+        "source": "https://registry.verra.org/app/projectDetail/VCS/4307"
+      }
+    }
+  ]
+}
