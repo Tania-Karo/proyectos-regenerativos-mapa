@@ -1,3 +1,15 @@
+body {
+    font-family: "Fira Code", monospace !important;
+}
+
+/* Aplica a todo el mapa Leaflet y sus controles */
+.leaflet-container,
+.leaflet-sidebar,
+.leaflet-popup,
+.leaflet-control {
+    font-family: "Fira Code", monospace !important;
+}
+
 html, body {
   height: 100%;
   margin: 0;
@@ -19,6 +31,42 @@ html, body {
   max-height: 100%;
   overflow-y: auto;
 }
+
+/* Cambiar el fondo del header completo */
+.leaflet-sidebar-header {
+    background: #380808;   
+    color: #fff;           /* texto blanco */
+    font-weight: bold;
+}
+
+.leaflet-sidebar-tabs {
+    background: #380808;   
+    color: #fff;
+}
+
+.leaflet-sidebar-tabs > li.active,
+.leaflet-sidebar-tabs > ul > li.active {
+    background-color: #380808 !important; 
+    color: #fff !important; 
+}
+
+.leaflet-sidebar-tabs > li.active i {
+    background-color: #380808 !important;
+    color: #fff !important;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+/* Íconos de tabs inactivas */
+.leaflet-sidebar-tabs > li > a i {
+    color: #fff !important;   /* blancos */
+}
+
+/* Opcional: cambiar también el <a> entero por si hay texto */
+.leaflet-sidebar-tabs > li > a {
+    color: #fff !important;
+}
+
 
 /* Ajuste móvil opcional */
 @media (max-width: 768px) {
