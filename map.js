@@ -1,10 +1,30 @@
+
+// Bounds de la imagen satelital (lat, lng)
+const imageBounds = [
+  [-55.0474099, -81.3314702], // SW: lat_min, lon_min
+  [  5.2729813, -34.7908973]  // NE: lat_max, lon_max
+];
+
 // Centrar el mapa en Boquerón, Paraguay (lat, lng)
-var map = L.map('map').setView([-25.5, -64.0], 6);
+const map = L.map('map', {
+  minZoom: 4,
+  maxZoom: 8,
+  maxBounds: imageBounds,
+  maxBoundsViscosity: 1.0
+});
+
+map.setView([-25.5, -64.0], 6);
+
 
 L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
   attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye',
   maxZoom: 19,
 }).addTo(map);
+
+// Agrego la imagen satelital
+const imageUrl = 'images/recortado2021_warped.png';
+const imageLayer = L.imageOverlay(imageUrl, imageBounds, { opacity: 0.6 });
+imageLayer.addTo(map);
 
 const sidebar = L.control.sidebar({
   autopan: true,

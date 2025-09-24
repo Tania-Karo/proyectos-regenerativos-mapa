@@ -34,24 +34,24 @@ html, body {
 
 /* Cambiar el fondo del header completo */
 .leaflet-sidebar-header {
-    background: #380808;   
+    background: #9B262A;   
     color: #fff;           /* texto blanco */
     font-weight: bold;
 }
 
 .leaflet-sidebar-tabs {
-    background: #380808;   
+    background: #9B262A;   
     color: #fff;
 }
 
 .leaflet-sidebar-tabs > li.active,
 .leaflet-sidebar-tabs > ul > li.active {
-    background-color: #380808 !important; 
+    background-color: #9B262A !important; 
     color: #fff !important; 
 }
 
 .leaflet-sidebar-tabs > li.active i {
-    background-color: #380808 !important;
+    background-color: #9B262A !important;
     color: #fff !important;
     border-radius: 5px;
     padding: 5px;
