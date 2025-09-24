@@ -58,13 +58,19 @@ fetch('geojson_files.json')
 
               L.marker([lat, lon], { icon: icon })
                 .on('click', () => {
-                  const html = `
-                    <h3>${props.name || "Predio"}</h3>
-                    <p><strong>Empresa:</strong> ${props.companyName || "N/A"}</p>
-                    <p><strong>Región:</strong> ${props.region || "N/A"}</p>
-                  `;
-                  document.getElementById('sidebar-content').innerHTML = html;
-                  sidebar.open('info');
+                    const html = `
+                      <h3>${props.name || "Predio"}</h3>
+                      <p><strong>Empresa:</strong> ${props.companyName || "N/A"}</p>
+                      <p><strong>Región:</strong> ${props.region || "N/A"}</p>
+                    `;
+                    document.getElementById('sidebar-content').innerHTML = html;
+                    sidebar.open('info');
+
+                    // Centramos y hacemos zoom gradual
+                    map.flyTo([lat, lon], 10, {
+                        animate: true,
+                        duration: 2 // Duración en segundos
+                    });
                 })
                 .addTo(map);
             }
