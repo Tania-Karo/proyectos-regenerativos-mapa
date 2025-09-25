@@ -35,7 +35,8 @@
         "companyName": "Gatto Hermanos S.R.L.",
         "region": "Sachayoj-Charata (Argentina)",
         "marker_lat": -26.658084,
-        "marker_lon": -62.053427
+        "marker_lon": -62.053427,
+        "project_id": "gattoh"
       }
     },
     {
@@ -174,7 +175,8 @@
       "properties": {
         "name": "Gatto Hermanos 2",
         "companyName": "Gatto Hermanos S.R.L.",
-        "region": "Sachayoj-Charata (Argentina)"
+        "region": "Sachayoj-Charata (Argentina)",
+        "project_id": "gattoh"
       }
     },
     {
@@ -409,7 +411,8 @@
       "properties": {
         "name": "Gatto Hermanos 3",
         "companyName": "Gatto Hermanos S.R.L.",
-        "region": "Sachayoj-Charata (Argentina)"
+        "region": "Sachayoj-Charata (Argentina)",
+        "project_id": "gattoh"
       }
     },
     {
@@ -468,7 +471,8 @@
       "properties": {
         "name": "Gatto Hermanos 4",
         "companyName": "Gatto Hermanos S.R.L.",
-        "region": "Sachayoj-Charata (Argentina)"
+        "region": "Sachayoj-Charata (Argentina)",
+        "project_id": "gattoh"
       }
     },
     {
@@ -523,7 +527,8 @@
       "properties": {
         "name": "Gatto Hermanos 5",
         "companyName": "Gatto Hermanos S.R.L.",
-        "region": "Sachayoj-Charata (Argentina)"
+        "region": "Sachayoj-Charata (Argentina)",
+        "project_id": "gattoh"
       }
     },
     {
@@ -562,7 +567,8 @@
       "properties": {
         "name": "Gatto Hermanos 6",
         "companyName": "Gatto Hermanos S.R.L.",
-        "region": "Sachayoj-Charata (Argentina)"
+        "region": "Sachayoj-Charata (Argentina)",
+        "project_id": "gattoh"
       }
     },
     {
@@ -609,7 +615,8 @@
       "properties": {
         "name": "Gatto Hermanos 7",
         "companyName": "Gatto Hermanos S.R.L.",
-        "region": "Sachayoj-Charata (Argentina)"
+        "region": "Sachayoj-Charata (Argentina)",
+        "project_id": "gattoh"
       }
     },
     {
@@ -644,7 +651,8 @@
       "properties": {
         "name": "Gatto Hermanos 8",
         "companyName": "Gatto Hermanos S.R.L.",
-        "region": "Sachayoj-Charata (Argentina)"
+        "region": "Sachayoj-Charata (Argentina)",
+        "project_id": "gattoh"
       }
     },
     {
@@ -679,7 +687,8 @@
       "properties": {
         "name": "Gatto Hermanos 9",
         "companyName": "Gatto Hermanos S.R.L.",
-        "region": "Sachayoj-Charata (Argentina)"
+        "region": "Sachayoj-Charata (Argentina)",
+        "project_id": "gattoh"
       }
     },
     {
@@ -862,7 +871,8 @@
       "properties": {
         "name": "Gatto Hermanos 10",
         "companyName": "Gatto Hermanos S.R.L.",
-        "region": "Sachayoj-Charata (Argentina)"
+        "region": "Sachayoj-Charata (Argentina)",
+        "project_id": "gattoh"
       }
     },
     {
@@ -905,7 +915,8 @@
       "properties": {
         "name": "Gatto Hermanos 11",
         "companyName": "Gatto Hermanos S.R.L.",
-        "region": "Sachayoj-Charata (Argentina)"
+        "region": "Sachayoj-Charata (Argentina)",
+        "project_id": "gattoh"
       }
     },
     {
@@ -948,7 +959,8 @@
       "properties": {
         "name": "Gatto Hermanos 12",
         "companyName": "Gatto Hermanos S.R.L.",
-        "region": "Sachayoj-Charata (Argentina)"
+        "region": "Sachayoj-Charata (Argentina)",
+        "project_id": "gattoh"
       }
     },
     {
@@ -987,7 +999,8 @@
       "properties": {
         "name": "Gatto Hermanos 13",
         "companyName": "Gatto Hermanos S.R.L.",
-        "region": "Sachayoj-Charata (Argentina)"
+        "region": "Sachayoj-Charata (Argentina)",
+        "project_id": "gattoh"
       }
     },
     {
@@ -1074,7 +1087,8 @@
       "properties": {
         "name": "Gatto Hermanos 14",
         "companyName": "Gatto Hermanos S.R.L.",
-        "region": "Sachayoj-Charata (Argentina)"
+        "region": "Sachayoj-Charata (Argentina)",
+        "project_id": "gattoh"
       }
     },
     {
@@ -1109,7 +1123,8 @@
       "properties": {
         "name": "Gatto Hermanos 15",
         "companyName": "Gatto Hermanos S.R.L.",
-        "region": "Sachayoj-Charata (Argentina)"
+        "region": "Sachayoj-Charata (Argentina)",
+        "project_id": "gattoh"
       }
     }
   ]
