@@ -83,7 +83,8 @@
         "companyName": "Palmeiras S.A.",
         "region": "Paraguay (Paraguay)",
         "marker_lat": -21.533132,
-        "marker_lon": -60.702245
+        "marker_lon": -60.702245,
+        "project_id": "palmeiras"
       }
     }
   ]

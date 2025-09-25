@@ -51,7 +51,8 @@
         "companyName": "Jerovia S.A.",
         "region": "Paraguay (Paraguay)",
         "marker_lat": -21.746738,
-        "marker_lon": -60.605986
+        "marker_lon": -60.605986,
+        "project_id": "jerovia"
       }
     }
   ]
