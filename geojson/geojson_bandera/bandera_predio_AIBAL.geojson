@@ -83,7 +83,8 @@
         "companyName": "AIBAL S.A.",
         "region": "Bandera (Argentina)",
         "marker_lat": -28.6104,
-        "marker_lon": -62.270979
+        "marker_lon": -62.270979,
+        "project_id": "aibal"
       }
     }
   ]

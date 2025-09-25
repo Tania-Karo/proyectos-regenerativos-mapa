@@ -31,7 +31,8 @@
         "companyName": "SMR S.A.",
         "region": "Bandera (Argentina)",
         "marker_lat": -28.726561,
-        "marker_lon": -62.385401
+        "marker_lon": -62.385401,
+        "project_id": "smrbandera"
       }
     },
     {
@@ -126,10 +127,11 @@
       "properties": {
         "name": "La Ponderosa",
         "companyName": "SMR S.A.",
-        "region": "Bandera (Argentina)"
+        "region": "Bandera (Argentina)",
+        "project_id": "smrbandera"
       }
     },
-        {
+    {
       "type": "Feature",
       "geometry": {
         "type": "Polygon",
@@ -177,7 +179,8 @@
       "properties": {
         "name": "La Independencia",
         "companyName": "SMR S.A.",
-        "region": "Bandera (Argentina)"
+        "region": "Bandera (Argentina)",
+        "project_id": "smrbandera"
       }
     }
   ]

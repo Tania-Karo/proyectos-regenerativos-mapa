@@ -16,13 +16,13 @@
         "companyName": "Profesionales SRL",
         "region": "Uruguay",
         "hectares": 221,
-        "status":"En desarrollo",
+        "status": "En desarrollo",
         "marker_lat": -34.736525,
         "marker_lon": -55.26700555555556,
         "source": "https://registry.verra.org/app/projectDetail/VCS/4725",
         "Name": "Marca de posición sin título",
         "Description": "",
-        "project_id": "4725",
+        "project_id": "4725uy",
         "layer_name": "Pozos Azules.kml"
       }
     }

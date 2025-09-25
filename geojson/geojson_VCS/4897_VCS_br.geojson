@@ -425,16 +425,16 @@
       "properties": {
         "Name": "Area de Uso Multiplo Elegivel",
         "Description": "",
-        "project_id": "4897",
+        "project_id": "4897bra",
         "layer_name": "Instancias_PA_Ituxi3_27_11_2023",
         "id": 4897,
         "name": "Fortaleza Ituxi III ALM",
         "companyName": "Multiples proponentes",
         "region": "Amazonas",
         "hectares": 371,
-        "status":"En desarrollo",
-        "marker_lat": -8.9440,
-        "marker_lon": -66.1340,
+        "status": "En desarrollo",
+        "marker_lat": -8.944,
+        "marker_lon": -66.134,
         "source": "https://registry.verra.org/app/projectDetail/VCS/4897"
       }
     },
@@ -964,7 +964,7 @@
       "properties": {
         "Name": "Area de Uso Multiplo Elegivel",
         "Description": "",
-        "project_id": "4897",
+        "project_id": "4897bra",
         "layer_name": "Instancias_PA_Ituxi3_27_11_2023"
       }
     },
@@ -1834,7 +1834,7 @@
       "properties": {
         "Name": "Area de Uso Multiplo Elegivel",
         "Description": "",
-        "project_id": "4897",
+        "project_id": "4897bra",
         "layer_name": "Instancias_PA_Ituxi3_27_11_2023"
       }
     },
@@ -2290,7 +2290,7 @@
       "properties": {
         "Name": "Area de Uso Multiplo Elegivel",
         "Description": "",
-        "project_id": "4897",
+        "project_id": "4897bra",
         "layer_name": "Instancias_PA_Ituxi3_27_11_2023"
       }
     },
@@ -2560,7 +2560,7 @@
       "properties": {
         "Name": "Area de Uso Multiplo Elegivel",
         "Description": "",
-        "project_id": "4897",
+        "project_id": "4897bra",
         "layer_name": "Instancias_PA_Ituxi3_27_11_2023"
       }
     },
@@ -3178,7 +3178,7 @@
       "properties": {
         "Name": "Area de Uso Multiplo Elegivel",
         "Description": "",
-        "project_id": "4897",
+        "project_id": "4897bra",
         "layer_name": "Instancias_PA_Ituxi3_27_11_2023"
       }
     },
@@ -4210,7 +4210,7 @@
       "properties": {
         "Name": "Area de Uso Multiplo Elegivel",
         "Description": "",
-        "project_id": "4897",
+        "project_id": "4897bra",
         "layer_name": "Instancias_PA_Ituxi3_27_11_2023"
       }
     },
@@ -4520,7 +4520,7 @@
       "properties": {
         "Name": "Area de Uso Multiplo Elegivel",
         "Description": "",
-        "project_id": "4897",
+        "project_id": "4897bra",
         "layer_name": "Instancias_PA_Ituxi3_27_11_2023"
       }
     }
