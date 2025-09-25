@@ -47,7 +47,8 @@
         "companyName": "Grupo Romar",
         "region": "NOA (Argentina)",
         "marker_lat": -27.773849,
-        "marker_lon": -65.375606
+        "marker_lon": -65.375606,
+        "project_id": "romar"
       }
     },
     {
@@ -94,7 +95,8 @@
       "properties": {
         "name": "Los Perez 1",
         "companyName": "Grupo Romar",
-        "region": "NOA (Argentina)"
+        "region": "NOA (Argentina)",
+        "project_id": "romar"
       }
     },
     {
@@ -185,7 +187,8 @@
       "properties": {
         "name": "Los Gomez 1",
         "companyName": "Grupo Romar",
-        "region": "NOA (Argentina)"
+        "region": "NOA (Argentina)",
+        "project_id": "romar"
       }
     },
     {
@@ -220,7 +223,8 @@
       "properties": {
         "name": "Los Gomez 2",
         "companyName": "Grupo Romar",
-        "region": "NOA (Argentina)"
+        "region": "NOA (Argentina)",
+        "project_id": "romar"
       }
     },
     {
@@ -411,7 +415,8 @@
       "properties": {
         "name": "El Mistol",
         "companyName": "Grupo Romar",
-        "region": "NOA (Argentina)"
+        "region": "NOA (Argentina)",
+        "project_id": "romar"
       }
     },
     {
@@ -454,7 +459,8 @@
       "properties": {
         "name": "Los Perez 2",
         "companyName": "Grupo Romar",
-        "region": "NOA (Argentina)"
+        "region": "NOA (Argentina)",
+        "project_id": "romar"
       }
     }
   ]

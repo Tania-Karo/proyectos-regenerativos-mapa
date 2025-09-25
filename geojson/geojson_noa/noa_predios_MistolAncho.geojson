@@ -159,7 +159,8 @@
         "companyName": "Agropecuaria Mistol Ancho",
         "region": "NOA (Argentina)",
         "marker_lat": -28.009161,
-        "marker_lon": -65.295409
+        "marker_lon": -65.295409,
+        "project_id": "mistola"
       }
     },
     {
@@ -210,7 +211,8 @@
       "properties": {
         "name": "Guampacha",
         "companyName": "Agropecuaria Mistol Ancho",
-        "region": "NOA (Argentina)"
+        "region": "NOA (Argentina)",
+        "project_id": "mistola"
       }
     },
     {
@@ -433,7 +435,8 @@
       "properties": {
         "name": "Mistol Ancho",
         "companyName": "Agropecuaria Mistol Ancho",
-        "region": "NOA (Argentina)"
+        "region": "NOA (Argentina)",
+        "project_id": "mistola"
       }
     },
     {
@@ -560,7 +563,8 @@
       "properties": {
         "name": "Casablanca",
         "companyName": "Agropecuaria Mistol Ancho",
-        "region": "NOA (Argentina)"
+        "region": "NOA (Argentina)",
+        "project_id": "mistola"
       }
     },
     {
@@ -623,7 +627,8 @@
       "properties": {
         "name": "La Armonía",
         "companyName": "Agropecuaria Mistol Ancho",
-        "region": "NOA (Argentina)"
+        "region": "NOA (Argentina)",
+        "project_id": "mistola"
       }
     },
     {
@@ -662,7 +667,8 @@
       "properties": {
         "name": "La Brea",
         "companyName": "Agropecuaria Mistol Ancho",
-        "region": "NOA (Argentina)"
+        "region": "NOA (Argentina)",
+        "project_id": "mistola"
       }
     }
   ]

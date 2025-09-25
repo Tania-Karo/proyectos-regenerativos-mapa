@@ -95,7 +95,8 @@
         "companyName": "La Tirolesa S.A.",
         "region": "NOA (Argentina)",
         "marker_lat": -28.035325,
-        "marker_lon": -65.367242
+        "marker_lon": -65.367242,
+        "project_id": "tirolesa"
       }
     }
   ]

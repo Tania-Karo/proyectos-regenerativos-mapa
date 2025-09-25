@@ -247,7 +247,8 @@
         "companyName": "San Patricio",
         "region": "NOA (Argentina)",
         "marker_lat": -28.679607,
-        "marker_lon": -65.1697
+        "marker_lon": -65.1697,
+        "project_id": "sanpatricio"
       }
     },
     {
@@ -536,7 +537,8 @@
         "companyName": "San Patricio",
         "region": "NOA (Argentina)",
         "marker_lat": -28.685113,
-        "marker_lon": -65.124119
+        "marker_lon": -65.124119,
+        "project_id": "sanpatricio"
       }
     }
   ]
