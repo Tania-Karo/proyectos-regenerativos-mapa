@@ -7,7 +7,7 @@ const imageBounds = [
 
 // Centrar el mapa en Boquerón, Paraguay (lat, lng)
 const map = L.map('map', {
-  minZoom: 4,
+  minZoom: 5,
   maxZoom: 8,
   maxBounds: imageBounds,
   maxBoundsViscosity: 1.0
@@ -87,7 +87,7 @@ fetch('geojson_files.json')
                     sidebar.open('info');
 
                     // Centramos y hacemos zoom gradual
-                    map.flyTo([lat, lon], 10, {
+                    map.flyTo([lat, lon], 8, {
                         animate: true,
                         duration: 2 // Duración en segundos
                     });
