@@ -359,7 +359,8 @@
         "companyName": "Suri Yaco S.R.L.",
         "region": "Sachayoj-Charata (Argentina)",
         "marker_lat": -26.672112,
-        "marker_lon": -61.938867
+        "marker_lon": -61.938867,
+        "project_id": "suriyaco"
       }
     },
     {
@@ -742,7 +743,8 @@
       "properties": {
         "name": "GT03",
         "companyName": "Suri Yaco S.R.L.",
-        "region": "Sachayoj-Charata (Argentina)"
+        "region": "Sachayoj-Charata (Argentina)",
+        "project_id": "suriyaco"
       }
     },
     {
@@ -2741,7 +2743,8 @@
       "properties": {
         "name": "SC06",
         "companyName": "Suri Yaco S.R.L.",
-        "region": "Sachayoj-Charata (Argentina)"
+        "region": "Sachayoj-Charata (Argentina)",
+        "project_id": "suriyaco"
       }
     }
   ]
