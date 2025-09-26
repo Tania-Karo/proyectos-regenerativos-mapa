@@ -7,8 +7,8 @@ const imageBounds = [
 
 // Centrar el mapa en Boquerón, Paraguay (lat, lng)
 const map = L.map('map', {
-  minZoom: 5,
-  maxZoom: 8,
+  minZoom: 4,
+  maxZoom: 10,
   maxBounds: imageBounds,
   maxBoundsViscosity: 1.0
 });
@@ -33,22 +33,42 @@ const sidebar = L.control.sidebar({
 }).addTo(map);
 
 
-var cowIcon = L.icon({
+const cowIcon = L.icon({
     iconUrl: 'icons/cow2.svg',
     iconSize: [40, 40],
     iconAnchor: [20, 40],
     popupAnchor: [0, -40]
 });
 
-var soybeanIcon = L.icon({
+const soybeanIcon = L.icon({
     iconUrl: 'icons/soybean4.svg',
     iconSize: [40, 40],
     iconAnchor: [20, 40],
     popupAnchor: [0, -40]
 });
 
-// Leer lista de archivos geojson
-fetch('geojson_files.json')
+
+// Función auxiliar para elegir el ícono según land_use
+function getIconByLandUse(land_use) {
+  if (!land_use) return soybeanIcon; // default
+  if (land_use.toLowerCase() === "cow") return cowIcon;
+  if (land_use.toLowerCase() === "soybean") return soybeanIcon;
+  return soybeanIcon; // fallback
+}
+
+let projectsData = {};
+let projectLayers = {}; // <<< nuevo: guardamos capas por project_id
+
+// 1. Cargar JSON maestro
+fetch('markerproperties.json')
+  .then(resp => resp.json())
+  .then(data => {
+    projectsData = data;
+    console.log("Projects data:", projectsData);
+
+    // 2. Ahora cargar los GeoJSON
+    return fetch('geojson_files.json');
+  })
   .then(response => response.json())
   .then(files => {
     let total = 0;
@@ -57,46 +77,115 @@ fetch('geojson_files.json')
       fetch(file)
         .then(resp => resp.json())
         .then(data => {
-          console.log("Cargando archivo:", file, data);
+          console.log("Cargando archivo:", file);
 
-          // Agregar polígonos y líneas (pero NO markers default)
+          // 3. Agregar polígonos con evento de click
           L.geoJSON(data, {
-            pointToLayer: () => null
+            pointToLayer: () => null,
+            onEachFeature: (feature, layer) => {
+              let projectId = feature.properties.project_id;
+              if (projectId) {
+                // Guardar referencia de la capa
+                if (!projectLayers[projectId]) {
+                  projectLayers[projectId] = [];
+                }
+                projectLayers[projectId].push(layer);
+
+                if (projectsData[projectId]) {
+                  layer.on('click', () => {
+                    highlightProject(projectId); // <<< highlight
+                    showSidebar(projectsData[projectId]);
+                  });
+                }
+              }
+            }
           }).addTo(map);
 
-          // Manejar los puntos con íconos personalizados
+          // 4. Manejar markers desde el JSON maestro
           data.features.forEach((feature) => {
-            let props = feature.properties;
-            let lat = props.marker_lat;
-            let lon = props.marker_lon;
+            let projectId = feature.properties.project_id;
+            if (projectId && projectsData[projectId]) {
+              let meta = projectsData[projectId];
+              let lat = meta.marker_lat;
+              let lon = meta.marker_lon;
 
-            console.log("Feature:", props.name, lat, lon, feature.geometry);
+              if (lat && lon) {
+                // Elegir ícono según land_use
+                let icon = getIconByLandUse(meta.land_use);
 
-            if (lat && lon) {
-              let icon = ((total % 2) === 0) ? cowIcon : soybeanIcon;
-              total++;
-
-              L.marker([lat, lon], { icon: icon })
-                .on('click', () => {
-                    const html = `
-                      <h3>${props.name || "Predio"}</h3>
-                      <p><strong>Empresa:</strong> ${props.companyName || "N/A"}</p>
-                      <p><strong>Región:</strong> ${props.region || "N/A"}</p>
-                    `;
-                    document.getElementById('sidebar-content').innerHTML = html;
-                    sidebar.open('info');
-
-                    // Centramos y hacemos zoom gradual
-                    map.flyTo([lat, lon], 8, {
-                        animate: true,
-                        duration: 2 // Duración en segundos
-                    });
-                })
-                .addTo(map);
+                L.marker([lat, lon], { icon: icon })
+                  .on('click', () => {
+                    highlightProject(projectId); // <<< highlight
+                    showSidebar(meta, [lat, lon]);
+                  })
+                  .addTo(map);
+              }
             }
           });
+
         })
         .catch(err => console.error("Error cargando archivo:", file, err));
     });
   })
-  .catch(err => console.error("Error leyendo geojson_files.json", err));
+  .catch(err => console.error("Error inicial:", err));
+
+
+// Función para mostrar en sidebar
+function showSidebar(meta, coords) {
+  let html = `<h3>${meta.name || "Predio"}</h3>`;
+
+  // Helper para agregar solo si el valor existe
+  function addField(label, value) {
+    if (value !== null && value !== undefined && value !== "") {
+      html += `<p><strong>${label}:</strong> ${value}</p>`;
+    }
+  }
+
+  addField("Empresa", meta.companyName);
+  addField("Región", meta.region);
+  addField("Tamaño", meta.size);
+  addField("Apoyado por", meta.supported_by);
+  addField("Estado", meta.status);
+
+  document.getElementById('sidebar-content').innerHTML = html;
+  sidebar.open('info');
+
+  if (coords) {
+    map.flyTo(coords, 8, {
+      animate: true,
+      duration: 2
+    });
+  }
+}
+
+// Función para resaltar todas las capas con el mismo project_id
+function highlightProject(projectId) {
+  // Resetear todas
+  Object.values(projectLayers).forEach(layers => {
+    layers.forEach(layer => {
+      if (layer.setStyle) {
+        layer.setStyle({ color: "#3388ff", weight: 2 }); // estilo default
+      }
+    });
+  });
+
+  // Resaltar las del projectId actual
+  if (projectLayers[projectId]) {
+    projectLayers[projectId].forEach(layer => {
+      if (layer.setStyle) {
+        layer.setStyle({ color: "red", weight: 4 });
+      }
+    });
+  }
+}
+
+// Cerrar sidebar solo si el click fue en el fondo del mapa, no en un feature
+map.on('click', (e) => {
+  if (!e.originalEvent.target.closest('.leaflet-interactive')) {
+    sidebar.close();
+  }
+});
+
+
+
+
