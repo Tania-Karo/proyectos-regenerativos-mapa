@@ -142,6 +142,7 @@ function showSidebar(meta, coords) {
   }
 
   addField("Empresa", meta.companyName);
+  addField("Tipo", meta.type);
   addField("Región", meta.region);
   addField("Tamaño", meta.size);
   addField("Apoyado por", meta.supported_by);
