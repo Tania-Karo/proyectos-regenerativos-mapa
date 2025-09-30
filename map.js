@@ -8,13 +8,12 @@ const imageBounds = [
 // Centrar el mapa en Boquerón, Paraguay (lat, lng)
 const map = L.map('map', {
   minZoom: 4,
-  maxZoom: 10,
+  maxZoom: 12,
   maxBounds: imageBounds,
   maxBoundsViscosity: 1.0
 });
 
-map.setView([-25.5, -64.0], 6);
-
+map.setView([-21.885563, -59.824846], 5);
 
 L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
   attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye',
