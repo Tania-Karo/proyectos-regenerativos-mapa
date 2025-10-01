@@ -30,6 +30,8 @@ html, body {
 .leaflet-sidebar .leaflet-sidebar-content {
   max-height: 100%;
   overflow-y: auto;
+  word-wrap: break-word;  /* evita cortes de texto */
+  white-space: normal;    /* asegura ajuste automático */
 }
 
 /* Cambiar el fondo del header completo */
@@ -77,11 +79,42 @@ html, body {
     color: #AF7502 !important; /* ejemplo: amarillo en hover */
 }
 
+.sidebar-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.sidebar-btn img {
+  width: 24px;
+  height: 24px;
+}
 
 
-/* Ajuste móvil opcional */
 @media (max-width: 768px) {
+  #map {
+    width: 95vw;     /* menos que 100vw */
+    height: 80vh;    /* deja espacio arriba/abajo */
+    margin: 0 auto;  /* centra el mapa */
+    border-radius: 0;
+  }
+
   .leaflet-sidebar {
-    width: 80%;
+    max-width: 50vw !important;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .leaflet-sidebar-header {
+    font-size: 1rem; /* encabezado más chico */
+  }
+
+  .leaflet-sidebar-content {
+    font-size: 0.9rem; /* texto más compacto */
+  }
+
+  .sidebar-btn img {
+    width: 20px;
+    height: 20px;
   }
 }

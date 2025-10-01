@@ -8,7 +8,7 @@ const imageBounds = [
 // Centrar el mapa en Boquerón, Paraguay (lat, lng)
 const map = L.map('map', {
   minZoom: 4,
-  maxZoom: 12,
+  maxZoom: 15,
   maxBounds: imageBounds,
   maxBoundsViscosity: 1.0
 });
@@ -20,10 +20,30 @@ L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/
   maxZoom: 19,
 }).addTo(map);
 
-// Agrego la imagen satelital
-const imageUrl = 'images/recortado2021_warped.png';
-const imageLayer = L.imageOverlay(imageUrl, imageBounds, { opacity: 0.6 });
-imageLayer.addTo(map);
+// Imagen satelital de emissions
+const imageUrl1 = 'images/recortado2021_warped.png';
+const emissionsLayer = L.imageOverlay(imageUrl1, imageBounds, { opacity: 0.6 });
+
+
+
+// Popup inicial
+
+let bounds = map.getBounds();
+let se = bounds.getSouthEast(); // esquina inferior derecha
+
+// Corrimiento: +lat = más al norte (arriba), -lng = más al oeste (izquierda)
+let offsetLat = 8;   // grados hacia arriba
+let offsetLng = 4;   // grados hacia la izquierda
+
+let offsetPos = L.latLng(se.lat - offsetLat, se.lng - offsetLng);
+
+let popupDefault = L.popup({
+    autoPan: true,
+    autoPanPadding: L.point(10, 10)
+})
+.setLatLng(offsetPos)
+.setContent('<div id="popUp"><h6>...</h6></div>')
+.openOn(map);
 
 const sidebar = L.control.sidebar({
   autopan: true,
@@ -56,7 +76,7 @@ function getIconByLandUse(land_use) {
 }
 
 let projectsData = {};
-let projectLayers = {}; // <<< nuevo: guardamos capas por project_id
+let projectLayers = {}; // <<< guardamos capas por project_id
 
 // 1. Cargar JSON maestro
 fetch('markerproperties.json')
@@ -70,31 +90,65 @@ fetch('markerproperties.json')
   })
   .then(response => response.json())
   .then(files => {
-    let total = 0;
-
     files.forEach((file) => {
       fetch(file)
         .then(resp => resp.json())
         .then(data => {
           console.log("Cargando archivo:", file);
 
-          // 3. Agregar polígonos con evento de click
+          // 3. Agregar features del GeoJSON
           L.geoJSON(data, {
-            pointToLayer: () => null,
-            onEachFeature: (feature, layer) => {
+            pointToLayer: (feature, latlng) => {
               let projectId = feature.properties.project_id;
-              if (projectId) {
-                // Guardar referencia de la capa
-                if (!projectLayers[projectId]) {
-                  projectLayers[projectId] = [];
-                }
-                projectLayers[projectId].push(layer);
+              if (!projectId) return null;
 
-                if (projectsData[projectId]) {
+              // Crear círculo de 10 km
+              let circle = L.circle(latlng, {
+                radius: 10000, // 10 km
+                color: "#3388ff",
+                weight: 2
+              });
+
+              // Crear ícono según land_use
+              let meta = projectsData[projectId];
+              let marker = null;
+              if (meta) {
+                let icon = getIconByLandUse(meta.land_use);
+                marker = L.marker(latlng, { icon: icon });
+
+                [circle, marker].forEach(layer => {
                   layer.on('click', () => {
-                    highlightProject(projectId); // <<< highlight
-                    showSidebar(projectsData[projectId]);
+                    highlightProject(projectId);
+                    showSidebar(meta, latlng);
                   });
+                });
+              }
+
+              // Guardar referencias
+              if (!projectLayers[projectId]) {
+                projectLayers[projectId] = [];
+              }
+              projectLayers[projectId].push(circle);
+              if (marker) projectLayers[projectId].push(marker);
+
+              return marker ? L.featureGroup([circle, marker]) : circle;
+            },
+            onEachFeature: (feature, layer) => {
+              // Polígonos y demás geometrías
+              if (feature.geometry.type !== "Point") {
+                let projectId = feature.properties.project_id;
+                if (projectId) {
+                  if (!projectLayers[projectId]) {
+                    projectLayers[projectId] = [];
+                  }
+                  projectLayers[projectId].push(layer);
+
+                  if (projectsData[projectId]) {
+                    layer.on('click', () => {
+                      highlightProject(projectId);
+                      showSidebar(projectsData[projectId]);
+                    });
+                  }
                 }
               }
             }
@@ -109,12 +163,11 @@ fetch('markerproperties.json')
               let lon = meta.marker_lon;
 
               if (lat && lon) {
-                // Elegir ícono según land_use
                 let icon = getIconByLandUse(meta.land_use);
 
                 L.marker([lat, lon], { icon: icon })
                   .on('click', () => {
-                    highlightProject(projectId); // <<< highlight
+                    highlightProject(projectId);
                     showSidebar(meta, [lat, lon]);
                   })
                   .addTo(map);
@@ -133,7 +186,6 @@ fetch('markerproperties.json')
 function showSidebar(meta, coords) {
   let html = `<h3>${meta.name || "Predio"}</h3>`;
 
-  // Helper para agregar solo si el valor existe
   function addField(label, value) {
     if (value !== null && value !== undefined && value !== "") {
       html += `<p><strong>${label}:</strong> ${value}</p>`;
@@ -147,11 +199,11 @@ function showSidebar(meta, coords) {
   addField("Apoyado por", meta.supported_by);
   addField("Estado", meta.status);
 
-  document.getElementById('sidebar-content').innerHTML = html;
+  document.getElementById('sidebar-details').innerHTML = html;
   sidebar.open('info');
 
   if (coords) {
-    map.flyTo(coords, 8, {
+    map.flyTo(coords, 11, {
       animate: true,
       duration: 2
     });
@@ -160,7 +212,6 @@ function showSidebar(meta, coords) {
 
 // Función para resaltar todas las capas con el mismo project_id
 function highlightProject(projectId) {
-  // Resetear todas
   Object.values(projectLayers).forEach(layers => {
     layers.forEach(layer => {
       if (layer.setStyle) {
@@ -169,7 +220,6 @@ function highlightProject(projectId) {
     });
   });
 
-  // Resaltar las del projectId actual
   if (projectLayers[projectId]) {
     projectLayers[projectId].forEach(layer => {
       if (layer.setStyle) {
@@ -179,12 +229,31 @@ function highlightProject(projectId) {
   }
 }
 
-// Cerrar sidebar solo si el click fue en el fondo del mapa, no en un feature
+// Cerrar sidebar solo si el click fue en el fondo del mapa
 map.on('click', (e) => {
   if (!e.originalEvent.target.closest('.leaflet-interactive')) {
     sidebar.close();
   }
 });
+
+
+// Agregar listeners a los botones del sidebar
+document.getElementById('btnEmissions').addEventListener('click', () => {
+  console.log("Botón Emisiones clickeado");
+  //  acá iría tu lógica para mostrar/ocultar la capa de emisiones
+  // Ejemplo:
+   if (map.hasLayer(emissionsLayer)) {
+     map.removeLayer(emissionsLayer);
+   } else {
+     map.addLayer(emissionsLayer);
+   }
+});
+
+document.getElementById('btnFires').addEventListener('click', () => {
+  console.log("Botón Fuego clickeado");
+  // lógica para mostrar/ocultar la capa de focos de incendio
+});
+
 
 
 
