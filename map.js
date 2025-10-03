@@ -30,7 +30,10 @@ let popupDefault = L.popup({
     autoPanPadding: L.point(10, 10)
 })
 .setLatLng(map.getCenter())
-.setContent('<div id="popUp"><h6>Para obtener información sobre un proyecto de carbono, hacer click en un ícono o predio. Los predios de un mismo proyecto seleccionado se resaltan en rojo</h6></div>')
+.setContent(`<div id="popUp" style="text-align: center;">
+  <h4><b>Mapa de Proyectos Regenerativos en Paraguay, Uruguay, Argentina y Brasil</b></h4>
+  <h6>Para obtener información sobre un proyecto de agricultura o ganadería regenerativa <b>hacer click en un ícono o predio</b>. Los predios resaltados en rojo al utilizar el cursor corresponden al mismo proyecto de créditos de carbono.</h6>
+  </div>`)
 .openOn(map);
 
 
@@ -240,7 +243,7 @@ sidebar.addPanel({
       map.addLayer(emissionsLayer);
       emissionsPopup = L.popup()
         .setLatLng(map.getCenter())
-        .setContent("<b>Emisiones</b><br>Capa activada.")
+        .setContent(`<div style="text-align: center;"><h5><b>Emisiones</b></h5><h6>Imágenes reflejan emisiones de gases de efecto invernadero en co2eq relacionadas a deforestación (2017). Datos: Climate Trace<h6></div>`)
         .openOn(map);
     }
   }
@@ -263,7 +266,7 @@ sidebar.addPanel({
       map.addLayer(firesLayer);
       firesPopup = L.popup()
         .setLatLng(map.getCenter())
-        .setContent("<b>Incendios</b><br>Capa activada.")
+        .setContent(`<div style="text-align: center;"><h5><b>Incendios</b></h5><h6>Imágenes reflejan emisiones de gases de efecto invernadero en co2eq relacionadas a deforestación (2020). Datos: Climate Trace<h6></div>`)
         .openOn(map);
     }
   }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mapa Piloto</title>
+  <title>Mapa Proyectos Regenerativos</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -38,7 +38,7 @@
         <li class="tabs"><a href="#predios" role="tab"><i class="bi bi-app-indicator"></i></a></li>
       </ul>
       <ul role="tablist">
-        <li class="tabs"><a href="#instrucciones" role="tab"><i class="bi bi-info-square"></i></a></li>
+        <li class="tabs"><a href="#informacion" role="tab"><i class="bi bi-info-square"></i></a></li>
         <li class="tabs"><a href="https://github.com/Tania-Karo/proyectos-regenerativos-mapa" target="_blank" role="button"><i class="bi bi-github"></i></a></li>
         <li class="tabs"><a href="#creditos" role="tab"><i class="bi bi-card-checklist"></i></a></li>
       </ul>
@@ -53,8 +53,8 @@
           <span class="leaflet-sidebar-close"><i class="fa fa-caret-left"></i></span>
         </h1>
         <div id="sidebar-content-menu">
-          <p>Seleccioná un marcador para ver detalles</p>
-          <p>Para activar las capas de emisiones e incendios, tocar los botones correspondientes</p>
+          <h4><b>Mapa de Proyectos Regenerativos en Paraguay, Uruguay, Argentina y Brasil</b></h4>
+          <h6>Para obtener información sobre un proyecto de agricultura o ganadería regenerativa, <b>hacer click en un ícono o predio</b>. Los predios resaltados en rojo al utilizar el cursor corresponden al mismo proyecto de créditos de carbono.</h6>
         </div>
       </div>
 
@@ -93,13 +93,18 @@
       </div>
 
       <!-- Instrucciones -->
-      <div class="leaflet-sidebar-pane" id="instrucciones">
+      <div class="leaflet-sidebar-pane" id="informacion">
         <h1 class="leaflet-sidebar-header">
-          Instrucciones
+          Información
           <span class="leaflet-sidebar-close"><i class="fa fa-caret-left"></i></span>
         </h1>
         <div id="sidebar-content-instrucciones">
-          <p>Texto de instrucciones...</p>
+          <ul>
+            <li><p></p>Para obtener información sobre un proyecto de agricultura o ganadería regenerativa, <b>hacer click en un ícono o predio</b>. Los predios resaltados en rojo al utilizar el cursor corresponden al mismo proyecto de créditos de carbono.</p></li>
+            <li><p>Utilizar los botones en la parte superior derecha para activar o desactivar las capas de <b>Emisiones</b> e <b>Incendios</b></p></li>
+            <li><p><b>Emisiones</b>. Imágenes reflejan emisiones de gases de efecto invernadero en co2eq relacionadas a deforestación (2017). Datos: Climate Trace.</p></li>
+            <li><p><b>Incendios</b>. Imágenes reflejan emisiones de gases de efecto invernadero en co2eq relacionadas a deforestación (2020). Datos: Climate Trace.</p></li>
+          </ul>
         </div>
       </div>
 
