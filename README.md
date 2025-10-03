@@ -24,7 +24,7 @@ El reportaje asociado a este mapa se encuentra en https://climatetrackerlatam.or
 ## Fuentes
 
 <ul>
-    <li>Las imágenes satelitales de emisiones e incendios son cortesía de <a href="https://climatetrace.org/" target="_blank">Climate Trace</a>.</li>
+    <li>Las imágenes satelitales de emisiones son cortesía de <a href="https://climatetrace.org/" target="_blank">Climate Trace</a>.</li>
     <li>Los datos de proyectos regenerativos vienen de:
         <ul>
             <li><a href="https://registry.verra.org/" target="_blank">Verra Registry</a></li>
