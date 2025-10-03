@@ -31,8 +31,8 @@ let popupDefault = L.popup({
 })
 .setLatLng(map.getCenter())
 .setContent(`<div id="popUp" style="text-align: center;">
-  <h4><b>Mapa de Proyectos Regenerativos en Paraguay, Uruguay, Argentina y Brasil</b></h4>
-  <h6>Para obtener información sobre un proyecto de agricultura o ganadería regenerativa <b>hacer click en un ícono o predio</b>. Los predios resaltados en rojo al utilizar el cursor corresponden al mismo proyecto de créditos de carbono.</h6>
+  <h5><b>Mapa de Proyectos Regenerativos en Paraguay, Uruguay, Argentina y Brasil</b></h5>
+  <p>Para obtener información sobre un proyecto de agricultura o ganadería regenerativa <b>hacer click en un ícono o predio</b>. Los predios resaltados en rojo al utilizar el cursor corresponden al mismo proyecto de créditos de carbono.</p>
   </div>`)
 .openOn(map);
 

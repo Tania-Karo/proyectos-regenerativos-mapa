@@ -56,8 +56,6 @@ html, body {
   display: block;
 }
 
-
-
 .leaflet-sidebar .leaflet-sidebar-content {
   max-height: 100%;
   overflow-y: auto;
