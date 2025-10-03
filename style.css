@@ -63,6 +63,14 @@ html, body {
   white-space: normal;    /* asegura ajuste automático */
 }
 
+.leaflet-sidebar-tabs ul:last-child {
+  transform: translateY(-30px); /* súbelos 30px */
+}
+
+.leaflet-popup-content-wrapper {
+  max-width: 300px; /* Ajustá este valor a lo angosto que quieras */
+}
+
 /* Cambiar el fondo del header completo */
 .leaflet-sidebar-header {
     background: #9B262A;   
