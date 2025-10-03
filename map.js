@@ -185,7 +185,7 @@ function showSidebar(meta, coords, layerBounds = null) {
   addField("Estado", meta.status);
 
   document.getElementById('sidebar-details').innerHTML = html;
-  sidebar.open('info');
+  sidebar.open('predios');
 
   if (layerBounds) {
     map.flyToBounds(layerBounds, {
@@ -195,7 +195,7 @@ function showSidebar(meta, coords, layerBounds = null) {
       duration: 1.4
     });
   } else if (coords) {
-    map.flyTo(coords, 11, { animate: true, duration: 1.4 });
+    map.flyTo(coords, 12, { animate: true, duration: 1.4 });
   }
 }
 
@@ -232,7 +232,7 @@ map.on('click', (e) => {
 let emissionsPopup = null;
 sidebar.addPanel({
   id: 'emissionsBtn',
-  tab: '<li class="tabs"><a href="#"><img src="icons/logs.svg" class="bi-custom"></a></li>',
+  tab: '<li class="tabs"><a href="#emisiones"><img src="icons/logs.svg" class="bi-custom"></a></li>',
   button: function () {
     console.log("Botón Emisiones clickeado");
     if (map.hasLayer(emissionsLayer)) {
@@ -255,7 +255,7 @@ sidebar.addPanel({
 let firesPopup = null;
 sidebar.addPanel({
   id: 'firesBtn',
-  tab: '<li class="tabs"><a href="#"><img src="icons/fire.svg" class="bi-custom"></a></li>',
+  tab: '<li class="tabs"><a href="#incendios"><img src="icons/fire.svg" class="bi-custom"></a></li>',
   button: function () {
     console.log("Botón de incendios clickeado");
     if (map.hasLayer(firesLayer)) {

@@ -31,53 +31,91 @@
 
   <!-- Sidebar -->
   <div id="sidebar" class="leaflet-sidebar collapsed">
-    
-    
-  <div class="leaflet-sidebar-tabs">
-    <ul role="tablist">
-      <!-- estos sí abren el sidebar -->
-      <li class="tabs">
-        <a href="#menu" role="tab">
-          <i class="bi bi-list"></i>
-        </a>
-      </li>
-    </ul>
+    <!-- Tabs -->
+    <div class="leaflet-sidebar-tabs">
+      <ul role="tablist">
+        <li class="tabs"><a href="#menu" role="tab"><i class="bi bi-three-dots"></i></a></li>
+        <li class="tabs"><a href="#predios" role="tab"><i class="bi bi-app-indicator"></i></a></li>
+      </ul>
+      <ul role="tablist">
+        <li class="tabs"><a href="#instrucciones" role="tab"><i class="bi bi-info-square"></i></a></li>
+        <li class="tabs"><a href="https://github.com/Tania-Karo/proyectos-regenerativos-mapa" target="_blank" role="button"><i class="bi bi-github"></i></a></li>
+        <li class="tabs"><a href="#creditos" role="tab"><i class="bi bi-card-checklist"></i></a></li>
+      </ul>
+    </div>
 
-    
-    <ul role="tablist">
-      <li class="tabs">
-        <a href="#instrucciones" role="tab">
-          <i class="bi bi-info-square"></i>
-        </a>
-      </li>
-      <li class="tabs">
-        <a href="https://github.com/Tania-Karo/proyectos-regenerativos-mapa" title="github" target="_blank" role="button"><i class="bi bi-github"></i></a>
-      </li>
-      <li class="tabs">
-        <a href="#creditos" role="tab">
-          <i class="bi bi-card-checklist"></i>
-        </a>
-      </li>
-    </ul>
-  </div>
-
-
+    <!-- Contenido de los paneles -->
     <div class="leaflet-sidebar-content">
-      <div class="leaflet-sidebar-pane" id="info">
+      <!-- Menu -->
+      <div class="leaflet-sidebar-pane" id="menu">
         <h1 class="leaflet-sidebar-header">
-          Información
+          Menu
           <span class="leaflet-sidebar-close"><i class="fa fa-caret-left"></i></span>
         </h1>
+        <div id="sidebar-content-menu">
+          <p>Seleccioná un marcador para ver detalles</p>
+          <p>Para activar las capas de emisiones e incendios, tocar los botones correspondientes</p>
+        </div>
+      </div>
 
-        <div id="sidebar-content">
-          <!-- acá el JS va a ir reemplazando con la info de cada predio -->
-          <div id="sidebar-details">
-            Seleccioná un marcador para ver detalles
-          </div>
+      <!-- Predios -->
+      <div class="leaflet-sidebar-pane" id="predios">
+        <h1 class="leaflet-sidebar-header">
+          Proyectos
+          <span class="leaflet-sidebar-close"><i class="fa fa-caret-left"></i></span>
+        </h1>
+        <!-- sidebar-details -->
+        <div id="sidebar-details">
+          <p>Seleccioná un marcador para ver detalles</p>
+        </div>
+      </div>
+
+      <!-- Emisiones -->
+      <div class="leaflet-sidebar-pane" id="emisiones">
+        <h1 class="leaflet-sidebar-header">
+          Emisiones
+          <span class="leaflet-sidebar-close"><i class="fa fa-caret-left"></i></span>
+        </h1>
+        <div id="sidebar-content-emisiones">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Incendios -->
+      <div class="leaflet-sidebar-pane" id="incendios">
+        <h1 class="leaflet-sidebar-header">
+          Incendios
+          <span class="leaflet-sidebar-close"><i class="fa fa-caret-left"></i></span>
+        </h1>
+        <div id="sidebar-content-emisiones">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Instrucciones -->
+      <div class="leaflet-sidebar-pane" id="instrucciones">
+        <h1 class="leaflet-sidebar-header">
+          Instrucciones
+          <span class="leaflet-sidebar-close"><i class="fa fa-caret-left"></i></span>
+        </h1>
+        <div id="sidebar-content-instrucciones">
+          <p>Texto de instrucciones...</p>
+        </div>
+      </div>
+
+      <!-- Créditos -->
+      <div class="leaflet-sidebar-pane" id="creditos">
+        <h1 class="leaflet-sidebar-header">
+          Créditos
+          <span class="leaflet-sidebar-close"><i class="fa fa-caret-left"></i></span>
+        </h1>
+        <div id="sidebar-content-creditos">
+          <p>Texto de créditos...</p>
         </div>
       </div>
     </div>
   </div>
+
 
   <!-- Leaflet JS (después del CSS, y antes de mi script) -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
