@@ -233,6 +233,7 @@ sidebar.addPanel({
   tab: '<li class="tabs"><a href="#emisiones"><img src="icons/logs.svg" class="bi-custom"></a></li>',
   button: function () {
     console.log("Botón Emisiones clickeado");
+    sidebar.close();
     if (map.hasLayer(emissionsLayer)) {
       map.removeLayer(emissionsLayer);
       if (emissionsPopup) {
