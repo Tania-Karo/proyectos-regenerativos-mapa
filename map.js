@@ -25,19 +25,14 @@ const imageUrl1 = 'images/recortado2021_warped.png';
 const emissionsLayer = L.imageOverlay(imageUrl1, imageBounds, { opacity: 0.6 });
 
 // Popup inicial
-let bounds = map.getBounds();
-let se = bounds.getSouthEast();
-let offsetLat = 8;
-let offsetLng = 4;
-let offsetPos = L.latLng(se.lat - offsetLat, se.lng - offsetLng);
-
 let popupDefault = L.popup({
     autoPan: true,
     autoPanPadding: L.point(10, 10)
 })
-.setLatLng(offsetPos)
-.setContent('<div id="popUp"><h6>...</h6></div>')
+.setLatLng(map.getCenter())
+.setContent('<div id="popUp"><h6>Para obtener información sobre un proyecto de carbono, hacer click en un ícono o predio. Los predios de un mismo proyecto seleccionado se resaltan en rojo</h6></div>')
 .openOn(map);
+
 
 // Sidebar
 const sidebar = L.control.sidebar({
