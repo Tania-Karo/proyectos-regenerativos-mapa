@@ -165,6 +165,17 @@ fetch('markerproperties.json')
   })
   .catch(err => console.error("Error inicial:", err));
 
+function flyToWithOffset(latlng, zoom, offsetX, offsetY) {
+  // Convertimos la coordenada a un punto en pixeles
+  const targetPoint = map.project(latlng, zoom).subtract([offsetX, offsetY]);
+  // Convertimos de vuelta a coordenada geográfica
+  const targetLatLng = map.unproject(targetPoint, zoom);
+  map.flyTo(targetLatLng, zoom, {
+    animate: true,
+    duration: 1.4
+  });
+}
+
 // Mostrar sidebar
 function showSidebar(meta, coords, layerBounds = null) {
   let html = `<h3>${meta.name || "Predio"}</h3>`;
@@ -186,15 +197,16 @@ function showSidebar(meta, coords, layerBounds = null) {
   sidebar.open('predios');
 
   if (layerBounds) {
-    map.flyToBounds(layerBounds, {
-      padding: [100, 100],
-      maxZoom: 11,
-      animate: true,
-      duration: 1.4
-    });
+    let center = layerBounds.getCenter();
+    // Offset hacia la izquierda (mitad del ancho del mapa)
+    let offsetX = map.getSize().x / 7; // mueve el punto hacia la derecha del mapa
+    flyToWithOffset(center, 11, offsetX, 0);
   } else if (coords) {
-    map.flyTo(coords, 12, { animate: true, duration: 1.4 });
+    let latlng = L.latLng(coords);
+    let offsetX = map.getSize().x / 7;
+    flyToWithOffset(latlng, 12, offsetX, 0);
   }
+
 }
 
 
