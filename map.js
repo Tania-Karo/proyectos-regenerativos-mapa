@@ -237,22 +237,55 @@ map.on('click', (e) => {
 });
 
 
-// Agregar listeners a los botones del sidebar
-document.getElementById('btnEmissions').addEventListener('click', () => {
-  console.log("Botón Emisiones clickeado");
-  //  acá iría tu lógica para mostrar/ocultar la capa de emisiones
-  // Ejemplo:
-   if (map.hasLayer(emissionsLayer)) {
-     map.removeLayer(emissionsLayer);
-   } else {
-     map.addLayer(emissionsLayer);
-   }
+let emissionsPopup = null; // referencia global para el popup de emisiones
+
+// Capa de emisiones
+sidebar.addPanel({
+  id: 'emissionsBtn',
+  tab: '<li class="tabs"><a href="#"><img src="icons/logs.svg" class="bi-custom"></a></li>',
+  button: function () {
+    console.log("Botón Emisiones clickeado");
+
+    if (map.hasLayer(emissionsLayer)) {
+      map.removeLayer(emissionsLayer);
+
+      if (emissionsPopup) {
+        map.closePopup(emissionsPopup); // cierra solo ese popup
+        emissionsPopup = null;
+      }
+    } else {
+      map.addLayer(emissionsLayer);
+
+      emissionsPopup = L.popup()
+        .setLatLng(map.getCenter())
+        .setContent("<b>Emisiones</b><br>Capa activada.")
+        .openOn(map);
+    }
+  }
 });
 
-document.getElementById('btnFires').addEventListener('click', () => {
-  console.log("Botón Fuego clickeado");
-  // lógica para mostrar/ocultar la capa de focos de incendio
+
+
+
+sidebar.addPanel({
+  id: 'firesBtn',
+  tab: '<li class="tabs"><a href="#"><img src="icons/fire.svg" class="bi-custom"></a></li>',
+  button: function () {
+    console.log("Botón de incendios clickeado");
+
+    if (map.hasLayer(firesLayer)) {
+      map.removeLayer(firesLayer);
+      map.closePopup(); // cierra cualquier popup abierto
+    } else {
+      map.addLayer(firesLayer);
+      L.popup()
+        .setLatLng(map.getCenter())
+        .setContent("<b>Incendios</b><br>Capa activada.")
+        .openOn(map);
+    }
+  }
 });
+
 
 
 

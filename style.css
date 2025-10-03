@@ -27,6 +27,37 @@ html, body {
   z-index: 1000;
 }
 
+.leaflet-sidebar-tabs li a:hover i {
+    color: #AF7502 !important; /* ejemplo: amarillo en hover */
+}
+
+.tabs a img {
+  transition: filter 0.2s ease; /* animación suave */
+}
+
+.tabs a:hover img {
+  filter: invert(64%) sepia(66%) saturate(663%) hue-rotate(17deg) brightness(92%) contrast(90%);
+}
+
+.tabs a {
+  display: flex !important;       /* aseguramos flex */
+  align-items: center !important; /* centro vertical */
+  justify-content: center !important; /* centro horizontal */
+  width: 40px;
+  height: 40px;
+  padding: 0 !important;          /* quita padding por defecto */
+  line-height: 1 !important;      /* evita desplazamiento */
+}
+
+.bi-custom {
+  width: 25px;
+  height: 25px;
+  filter: invert(1) brightness(2);
+  display: block;
+}
+
+
+
 .leaflet-sidebar .leaflet-sidebar-content {
   max-height: 100%;
   overflow-y: auto;
@@ -75,9 +106,9 @@ html, body {
     color: #fff !important;
 }
 
-.leaflet-sidebar-tabs li a:hover i {
-    color: #AF7502 !important; /* ejemplo: amarillo en hover */
-}
+
+
+
 
 .sidebar-btn {
   background: none;

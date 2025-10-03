@@ -33,20 +33,24 @@
   <div id="sidebar" class="leaflet-sidebar collapsed">
     
     
-    <div class="leaflet-sidebar-tabs">
-      <ul role="tablist">
+  <div class="leaflet-sidebar-tabs">
+    <ul role="tablist">
+      <!-- estos sí abren el sidebar -->
+      <li class="tabs">
+        <a href="#info" role="tab">
+          <i class="bi bi-list"></i>
+        </a>
+      </li>
+    </ul>
+
+    
+    <ul role="tablist">
         <li class="tabs">
-          <a href="#info" role="tab">
-            <i class="bi bi-list"></i>
-          </a>
+            <a href="https://github.com/Tania-Karo/proyectos-regenerativos-mapa" title="github" target="_blank" role="button"><i class="bi bi-github"></i></a>
         </li>
-        <li class="tabs">
-          <a href="#emisiones" role="tab">
-            <img src="icons/logs.png" alt="Emisiones" style="width:20px; height:20px;">
-          </a>
-        </li>
-      </ul>
-    </div>
+    </ul>
+  </div>
+
 
     <div class="leaflet-sidebar-content">
       <div class="leaflet-sidebar-pane" id="info">
@@ -56,15 +60,6 @@
         </h1>
 
         <div id="sidebar-content">
-          <div id="sidebar-buttons" style="margin: 10px 0; display: flex; gap: 10px;">
-            <button id="btnEmissions" class="sidebar-btn">
-              <img src="icons/logs.png" alt="Emisiones">
-            </button>
-            <button id="btnFires" class="sidebar-btn">
-              <img src="icons/fire.png" alt="Fuego">
-            </button>
-          </div>
-
           <!-- acá el JS va a ir reemplazando con la info de cada predio -->
           <div id="sidebar-details">
             Seleccioná un marcador para ver detalles
