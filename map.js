@@ -263,24 +263,24 @@ sidebar.addPanel({
 });
 
 // Capa de incendios
-let firesPopup = null;
-sidebar.addPanel({
-  id: 'firesBtn',
-  tab: '<li class="tabs"><a href="#incendios"><img src="icons/fire.svg" class="bi-custom"></a></li>',
-  button: function () {
-    console.log("Botón de incendios clickeado");
-    if (map.hasLayer(firesLayer)) {
-      map.removeLayer(firesLayer);
-      if (firesPopup) {
-        map.closePopup(firesPopup);
-        firesPopup = null;
-      }
-    } else {
-      map.addLayer(firesLayer);
-      firesPopup = L.popup()
-        .setLatLng(map.getCenter())
-        .setContent(`<div style="text-align: center;"><h5><b>Incendios</b></h5><h6>Imágenes reflejan emisiones de gases de efecto invernadero en co2eq relacionadas a deforestación (2020). Datos: Climate Trace<h6></div>`)
-        .openOn(map);
-    }
-  }
-});
+//  let firesPopup = null;
+//  sidebar.addPanel({
+//    id: 'firesBtn',
+//    tab: '<li class="tabs"><a href="#incendios"><img src="icons/fire.svg" class="bi-custom"></a></li>',
+//    button: function () {
+//      console.log("Botón de incendios clickeado");
+//      if (map.hasLayer(firesLayer)) {
+//        map.removeLayer(firesLayer);
+//        if (firesPopup) {
+//          map.closePopup(firesPopup);
+//          firesPopup = null;
+//        }
+//      } else {
+//        map.addLayer(firesLayer);
+//        firesPopup = L.popup()
+//          .setLatLng(map.getCenter())
+//          .setContent(`<div style="text-align: center;"><h5><b>Incendios</b></h5><h6>Imágenes reflejan emisiones de gases de efecto invernadero en co2eq relacionadas a deforestación (2020). Datos: Climate Trace<h6></div>`)
+//          .openOn(map);
+//      }
+//    }
+//  });
